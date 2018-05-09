@@ -61,6 +61,8 @@ function printQuote(){
     print(html); 
 }
 
+
+
 function print(message){
     var div = document.getElementById('quote-box'); 
     div.innerHTML = message; 
