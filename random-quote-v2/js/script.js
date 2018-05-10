@@ -45,11 +45,11 @@ function printQuote(){
     html += '<p class = "quote">'+ quote.quote + '</p>'; 
     html += '<p class = "source">'; 
     html +=  quote.source; 
-    if(quote.citation!==null){
+    if(quote.citation){
         html += '<span class="citation">'+quote.citation +'</span>'; 
         
     }
-    if(!quote.year.isNaN()){
+    if(quote.year){
         html += '<span class="year">'+quote.year + '</span>'; 
     }
     html+= '</p>'; 
@@ -72,6 +72,6 @@ function print(message){
 
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote(), false);
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
  
