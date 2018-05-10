@@ -1,6 +1,6 @@
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener("click", printQuote(), false);
 
 var quotes = [
     {
@@ -36,20 +36,20 @@ var quotes = [
 //create a number between 0 and the length of the quotes array
 //return the randomly picked quote object
 //
-function getRandomQuote(quote_list){
+function getRandomQuote(){
     var number = Math.floor(Math.random()*(quote_list.length - 1)) + 1; 
-    var random_quote = quote_list[number]; 
+    var random_quote = quotes[number]; 
     return random_quote; 
     
 }
 
 
 function printQuote(){
-    var quote = getRandomQuote(quote_list); 
+    var quote = getRandomQuote(quotes); 
     var html = ''; 
     html += '<p class = "quote">'+ quote.quote + '</p>'; 
     html += '<p class = "source">'; 
-    html += '<span>'+ quote.source + '</span>'; 
+    html +=  quote.source; 
     if(quote.citation!==null){
         html += '<span class="citation">'+quote.citation +'</span>'; 
         
