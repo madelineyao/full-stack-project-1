@@ -1,3 +1,4 @@
+//All the quotes for the webpage 
 var quotes = [
     {
       quote: 'One good thing about music, when it hits you, you feel no pain.', 
@@ -7,13 +8,13 @@ var quotes = [
     {
        quote:'Nothing is better than going home to family and eating good food and relaxing ', 
        source: 'Irina Shayk', 
-       
+       tags: 'going home'
               
     }, 
     {
       quote: 'For beautiful eyes, look for the good in others; for beautiful lips, speak only words of kindness; and for poise, walk with the knowledge that you are never alone. ', 
       source:  'Audrey Hepburn', 
-      
+      tags: 'wisdom'
       
     }, 
     {
@@ -30,11 +31,10 @@ var quotes = [
 
 //create a number between 0 and the length of the quotes array
 //return the randomly picked quote object
-var intervalID; 
-function setTimeLimit(){
-    intervalID = setInterval(printQuote(), 30000);
-}
- 
+
+setInterval(printQuote, 30000);
+
+//The function is to produce a random quote from the array of quotes 
 function getRandomQuote(){
     var number = Math.floor(Math.random()*quotes.length); 
     var random_quote = quotes[number]; 
@@ -55,6 +55,9 @@ function printQuote(){
     }
     if(quote.year){
         html += '<span class="year">'+quote.year + '</span>'; 
+    }
+    if(quote.tags){
+        html += '<span class="tags">'+quote.tags +'</span>'; 
     }
     html+= '</p>'; 
     randomColor();
@@ -77,10 +80,7 @@ function print(message){
     div.innerHTML = message; 
 }
 
-function clearTimeInterval(){
-    clearInterval(intervalID);
-}
-
+ 
  
 
 
