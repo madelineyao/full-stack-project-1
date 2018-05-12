@@ -8,13 +8,13 @@ var quotes = [
     {
        quote:'Nothing is better than going home to family and eating good food and relaxing ', 
        source: 'Irina Shayk', 
-       tags: 'going home'
+       
               
     }, 
     {
       quote: 'For beautiful eyes, look for the good in others; for beautiful lips, speak only words of kindness; and for poise, walk with the knowledge that you are never alone. ', 
       source:  'Audrey Hepburn', 
-      tags: 'wisdom'
+      
       
     }, 
     {
