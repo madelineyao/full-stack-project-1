@@ -29,9 +29,8 @@ var quotes = [
     }
 ];
 
-//create a number between 0 and the length of the quotes array
-//return the randomly picked quote object
 
+//make the quote on the webpage auto-refreshed every 30 seconds 
 setInterval(printQuote, 30000);
 
 //The function is to produce a random quote from the array of quotes 
@@ -42,7 +41,7 @@ function getRandomQuote(){
     
 }
 
-
+//The function is to make the quote shown on the webpage for the user
 function printQuote(){
     var quote = getRandomQuote(); 
     var html = ''; 
@@ -64,7 +63,8 @@ function printQuote(){
     print(html); 
 }
 
-
+//Helper function for printQuote
+//Make the color change as the quote changes in the webpage
 function randomColor(){
     var x = Math.floor(Math.random()*256); 
     var y = Math.floor(Math.random()*256); 
@@ -74,7 +74,8 @@ function randomColor(){
 }
 
 
-
+//Helper function for printQuote
+//Help the quote to be shown on the webpage 
 function print(message){
     var div = document.getElementById('quote-box'); 
     div.innerHTML = message; 
