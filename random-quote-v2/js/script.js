@@ -2,30 +2,34 @@
 var quotes = [
     {
       quote: 'One good thing about music, when it hits you, you feel no pain.', 
-      source: 'Bob Marley', 
+      source: 'Bob Marley'
            
     }, 
     {
        quote:'Nothing is better than going home to family and eating good food and relaxing ', 
-       source: 'Irina Shayk', 
+       source: 'Irina Shayk'
        
               
     }, 
     {
       quote: 'For beautiful eyes, look for the good in others; for beautiful lips, speak only words of kindness; and for poise, walk with the knowledge that you are never alone. ', 
-      source:  'Audrey Hepburn', 
+      source:  'Audrey Hepburn' 
       
       
     }, 
     {
       quote:  'Happiness radiates like the fragrance from a flower and draws all good things towards you.',   
-      source:  'Marharishi Mahesh Yogi',  
+      source:  'Marharishi Mahesh Yogi' 
       
     }, 
     {
       quote: 'Some days are just bad days, that\'s all. You have to experience sadness to know happiness, and I remind myself that not every day is going to be a good day, that\'s just the way it is!',  
-      source:   'Dita Von Tesse', 
+      source:   'Dita Von Tesse'
     
+    }, 
+    {
+      quote: 'We should be taught not to wait for inspiration to start a thing. Action always generates inspiration. Inspiration seldom generates action.', 
+      source: 'Frank Tibolt'
     }
 ];
 
@@ -66,10 +70,17 @@ function printQuote(){
 //Helper function for printQuote
 //Make the color change as the quote changes in the webpage
 function randomColor(){
-    var x = Math.floor(Math.random()*256); 
-    var y = Math.floor(Math.random()*256); 
-    var z = Math.floor(Math.random()*256); 
-    var new_color = "rgb("+x+", "+y+", "+z+")";
+    var new_color = "rgb("; 
+    for(var i=0; i<3; i+=1){
+        var x = Math.floor(Math.random()*256); 
+        if(i!==2){
+            new_color+= x + ",";
+        } else {
+            new_color+= x+ ")";
+        }
+        
+    }
+    
     document.body.style.backgroundColor = new_color;
 }
 
